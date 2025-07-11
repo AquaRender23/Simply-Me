@@ -1,0 +1,126 @@
+.pastel-navbar{
+    background-color: #DC7FFB;
+    font-family: 'Poppins';
+    border-radius: 0 0 20px 20px;
+}
+
+.pastel-navbar .navbar-brand {
+    font-size: 1.60rem;
+    letter-spacing: 0.75px;
+}
+
+.pastel-navbar .nav-link{
+    color: #25092E;
+    font-weight: 500;
+}
+
+.pastel-navbar .nav-link:hover{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.a{
+    font-style: italic;
+    font-family: Raleway;
+}
+
+.b{
+    font-weight: 400;
+    font-size: 1.50rem;
+}
+
+.c{
+    background-color: #CC68E5;
+}
+
+.button{
+    color: #160A19;
+    border: #160A19;
+}
+
+.button:hover{
+    background-color: #160A19;
+}
+
+
+
+
+.body f{
+    font-family: 'sans-serif';
+    font: "#000000";
+    padding: 40px;
+}
+
+.quote-box{
+    background: #E7CBF3;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px 2px;
+    font-size: 20px;
+}
+
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    height: 200px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #E7CBF3;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #A577B8;
+}
+
+
+
+
+body {
+  font-family: 'Futura';
+  background-color: #EFABF5;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-box {
+  width: 300px;
+  margin: auto;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+

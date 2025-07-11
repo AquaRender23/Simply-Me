@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Entries</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='entries.css') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    </head>
+    <body style="background-color: #E0ACDD;">
+        <h1> 📓 Your Journal Entries</h1>
+
+        {% for entry in entries %}
+        <div>
+            <h5><u>{{ entry["title"] }}</u></h5>
+            <p>{{ entry["content"] }}</p>
+            <p style="font-size: 0.75rem;">{{ entry["timestamp"] }}</p>
+        </div>
+        <hr>
+        {% endfor %}
+        <a href="/" style="color: black;">Go to homepage</a>
+    </body>
+
+    </html>
