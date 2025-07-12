@@ -217,7 +217,7 @@ def new_entry():
 def entries():
 
     conn = get_db_connection()
-    rows = conn.execute("SELECT title, content, timestamp FROM entries WHERE user_id = ?", (session["user_id"],)).fetchall()
+    rows = conn.execute("SELECT title, content, timestamp FROM entries WHERE user_id = ? ORDER BY timestamp DESC;", (session["user_id"],)).fetchall()
     conn.close()
 
     print(f"[DEBUG] Entries for user {session['user_id']}:", rows)
