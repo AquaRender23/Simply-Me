@@ -202,10 +202,15 @@ def new_entry():
         ist_now = datetime.now(ist)  
         formatted_time = ist_now.strftime("%Y-%m-%d %H:%M:%S")
 
-        conn = get_db_connection()
-        conn.execute("INSERT INTO entries (user_id , title , content, timestamp) VALUES (?, ?, ?, ?)", (session["user_id"], title, content, formatted_time,))
-        conn.commit()
-        conn.close()
+        try:
+            conn = sqlite3.connect("journal.db", timeout=10)
+            conn.execute("INSERT INTO entries (user_id, title, content, timestamp) VALUES (?, ?, ?, ?)",
+                         (session["user_id"], title, content, formatted_time))
+            conn.commit()
+        except sqlite3.OperationalError:
+            return apology("Database is busy, please try again in a moment.")
+        finally:
+            conn.close()
 
         return redirect("/")
     return render_template("new-entry.html")
