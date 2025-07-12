@@ -5,6 +5,8 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from functools import wraps
 import random
+from datetime import datetime
+import pytz
 
 app = Flask(__name__)
 
@@ -196,8 +198,12 @@ def new_entry():
         if not content:
             return apology("Cannot save entry without content")
 
+        ist = pytz.timezone("Asia/Kolkata")
+        ist_now = datetime.now(ist)  
+        formatted_time = ist_now.strftime("%Y-%m-%d %H:%M:%S")
+
         conn = get_db_connection()
-        conn.execute("INSERT INTO entries (user_id , title , content) VALUES (?, ?, ?)", (session["user_id"], title, content,))
+        conn.execute("INSERT INTO entries (user_id , title , content, timestamp) VALUES (?, ?, ?, ?)", (session["user_id"], title, content, formatted_time,))
         conn.commit()
         conn.close()
 
